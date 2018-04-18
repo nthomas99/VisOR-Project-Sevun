@@ -1,0 +1,7 @@
+# General
+.DS_Store
+*.gz
+*.zip
+*.raw
+*.log
+*.pdf
