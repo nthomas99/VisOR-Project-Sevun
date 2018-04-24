@@ -5,3 +5,13 @@
 *.raw
 *.log
 *.pdf
+
+# Altium
+*.AnnotationPreview
+*.err
+*.PrjPCBStructure
+*.PcbDoc.htm
+__Previews
+History
+Design\ Rule*.*
+hardware/Project\ Logs*

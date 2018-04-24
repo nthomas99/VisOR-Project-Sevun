@@ -1,0 +1,3 @@
+[submodule "hardware/cots/Library"]
+	path = hardware/cots/Library
+	url = git@github.com:sevun/library-altium.git
