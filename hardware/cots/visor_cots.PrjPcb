@@ -90,7 +90,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document4]
-DocumentPath=Library\miscellaneous_connectors.IntLIb
+DocumentPath=Library\FCI\fci.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -107,7 +107,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document5]
-DocumentPath=Library\miscellaneous_devices.IntLib
+DocumentPath=Library\miscellaneous_connectors.IntLIb
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -124,7 +124,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document6]
-DocumentPath=Library\Samtec\samtec.IntLib
+DocumentPath=Library\miscellaneous_devices.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -141,7 +141,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document7]
-DocumentPath=Library\standard_capacitors.IntLib
+DocumentPath=Library\Samtec\samtec.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -158,6 +158,23 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document8]
+DocumentPath=Library\standard_capacitors.IntLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[Document9]
 DocumentPath=Library\standard_resistors.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -1071,6 +1088,7 @@ Type110=1
 Type111=1
 Type112=1
 Type113=1
+MultiChannelAlternate=2
 
 [ERC Connection Matrix]
 L1=NNNNNNNNNNNWNNNWW
