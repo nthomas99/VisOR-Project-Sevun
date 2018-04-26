@@ -56,10 +56,61 @@ GenerateClassCluster=0
 DocumentUniqueId=SBVWXDGR
 
 [Document2]
-DocumentPath=TOP.SchDoc
+DocumentPath=_io.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
+AnnotationIndexControlEnabled=1
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=JJUHWAOE
+
+[Document3]
+DocumentPath=_i2c0.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=200
+AnnotationIndexControlEnabled=1
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=3
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=MCFRQPWQ
+
+[Document4]
+DocumentPath=_accel_mag.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=240
+AnnotationIndexControlEnabled=1
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=5
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=RMRBAWYJ
+
+[Document5]
+DocumentPath=_power.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=100
+AnnotationIndexControlEnabled=1
 AnnotateSuffix=
 AnnotateScope=All
 AnnotateOrder=2
@@ -70,10 +121,27 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=UMSLUKYE
+DocumentUniqueId=XUIWTMAX
 
-[Document3]
-DocumentPath=io.SchDoc
+[Document6]
+DocumentPath=_gyroscope.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=220
+AnnotationIndexControlEnabled=1
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=4
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=0
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=OUBERJTG
+
+[Document7]
+DocumentPath=TOP.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=1
@@ -87,9 +155,9 @@ ClassGenCCAutoRoomEnabled=0
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=JJUHWAOE
+DocumentUniqueId=UMSLUKYE
 
-[Document4]
+[Document8]
 DocumentPath=Library\Common\common.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -106,7 +174,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document5]
+[Document9]
 DocumentPath=Library\CUI\cui.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -123,7 +191,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document6]
+[Document10]
 DocumentPath=Library\FCI\fci.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -140,7 +208,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document7]
+[Document11]
 DocumentPath=Library\Samtec\samtec.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -157,7 +225,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document8]
+[Document12]
 DocumentPath=Library\miscellaneous_connectors.IntLIb
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -174,7 +242,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document9]
+[Document13]
 DocumentPath=Library\miscellaneous_devices.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -191,7 +259,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document10]
+[Document14]
 DocumentPath=Library\standard_capacitors.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -208,7 +276,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document11]
+[Document15]
 DocumentPath=Library\standard_resistors.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -224,23 +292,6 @@ ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
-
-[Document12]
-DocumentPath=power.SchDoc
-AnnotationEnabled=1
-AnnotateStartValue=1
-AnnotationIndexControlEnabled=0
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=1
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=1
-ClassGenCCAutoRoomEnabled=0
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=XUIWTMAX
 
 [Configuration1]
 Name=Sources
