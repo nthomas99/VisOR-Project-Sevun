@@ -1,0 +1,29 @@
+Output: Gerber Files
+Type  : Gerber
+From  : Variant [[No Variations]] of Project [7798-20-0228.PrjPcb]
+   Generated File[7798-20-0228.GTL]
+   Generated File[7798-20-0228.GP1]
+   Generated File[7798-20-0228.GP2]
+   Generated File[7798-20-0228.GBL]
+   Generated File[7798-20-0228.GPB]
+   Generated File[7798-20-0228.GPT]
+   Generated File[7798-20-0228.GTO]
+   Generated File[7798-20-0228.GTP]
+   Generated File[7798-20-0228.GTS]
+   Generated File[7798-20-0228.GBS]
+   Generated File[7798-20-0228.GBP]
+   Generated File[7798-20-0228.GBO]
+   Generated File[7798-20-0228.GM1]
+   Generated File[7798-20-0228.GM2]
+   Generated File[7798-20-0228.GM13]
+   Generated File[7798-20-0228.GM15]
+   Generated File[7798-20-0228.GM25]
+   Generated File[7798-20-0228.RUL]
+   Generated File[7798-20-0228.EXTREP]
+   Generated File[7798-20-0228.REP]
+
+
+Files Generated   : 20
+Documents Printed : 0
+
+Finished Output Generation At 5:10:51 PM On 4/30/2018
