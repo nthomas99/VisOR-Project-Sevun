@@ -11,7 +11,8 @@
 *.err
 *.PrjPCBStructure
 *.PcbDoc.htm
-__Previews
+*.Cam
+_Previews
 History
 Design\ Rule*.*
 hardware/Project\ Logs*
