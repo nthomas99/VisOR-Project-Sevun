@@ -6,3 +6,6 @@ FIX
 - Replaced R1,R2,R3,R4 560 ohm resistors with 33 ohm resistors
 - Replaced 1V8, IND1, IND2, IND3 blue LEDs with green LEDs
 - Replaced J2 TMMH-120-01-F-D header with TMMH-120-01-F-D header
+
+1.0.0
+- PCB Fabrication
