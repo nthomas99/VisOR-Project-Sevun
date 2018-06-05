@@ -44,5 +44,7 @@ int main(int argc, char** argv) {
     fmt::print("async_io                    {}\n", info.capabilities.async_io);
     fmt::print("streaming                   {}\n", info.capabilities.streaming);
 
+    video_device.capture_stream(result, "capture.raw", 10);
+
     return 0;
 }

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "result.h"
+#include "buffers.h"
 
 namespace sevun {
 
@@ -26,10 +27,10 @@ namespace sevun {
     };
 
     struct device_info_t {
-        std::string driver;
         std::string card;
+        std::string driver;
         std::string bus_info;
-        uint32_t version;
+        uint32_t version = 0;
         device_capabilities_t capabilities {};
     };
 
@@ -43,12 +44,30 @@ namespace sevun {
 
         const device_info_t& info() const;
 
+        void capture_stream(
+            sevun::result &result,
+            const std::string& output_path,
+            uint32_t stream_count);
+
     private:
+        int do_handle_cap(
+            sevun::buffers &b,
+            FILE *fout,
+            int *index,
+            unsigned int &count,
+            timespec &ts_last);
+
         int do_ioctl_name(
             sevun::result& result,
             unsigned long int request,
             void* parm,
             const std::string& name);
+
+        bool enumerate_video_formats(
+                sevun::result& result,
+                uint32_t type);
+
+        bool get_capture_format(sevun::result& result);
 
         bool is_sub_device(sevun::result& result) const;
 
@@ -56,5 +75,7 @@ namespace sevun {
         int _fd;
         std::string _path;
         device_info_t _info {};
+        uint32_t _stream_skip = 0;
+        uint32_t _stream_count = 0;
     };
 };

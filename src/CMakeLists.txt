@@ -14,6 +14,7 @@ add_executable (
         visor
         main.cpp
         device.cpp device.h
+        buffers.cpp buffers.h
         result.h result_message.h)
 
 target_link_libraries (
