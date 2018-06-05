@@ -10,12 +10,75 @@
 #include <sys/ioctl.h>
 #include <netinet/in.h>
 #include <fmt/format.h>
+#include <SDL_surface.h>
 #include <sys/sysmacros.h>
 #include <linux/videodev2.h>
 #include "device.h"
 #include "buffers.h"
+#include "hex_formatter.h"
+
+#define CLIP(value) (uint8_t)(((value)>0xFF)?0xff:(((value)<0)?0:(value)))
 
 namespace sevun {
+
+    void bayer_mono_to_rgb24(
+            uint8_t *pBay,
+            uint8_t *pRGB24,
+            int width,
+            int height,
+            int pix_order) {
+        int i, j;
+        uint8_t tmp;
+
+        for (i = 0; i < height; i++) {
+            for (j = 0; j < width; j++) {
+                tmp = (*pBay++);
+                *pRGB24++ = (uint8_t) tmp;
+                *pRGB24++ = (uint8_t) tmp;
+                *pRGB24++ = (uint8_t) tmp;
+            }
+        }
+    }
+
+    void rgb2yuyv(
+            const uint8_t* prgb,
+            uint8_t* pyuv,
+            int width,
+            int height) {
+        int i = 0;
+        for (i = 0; i < (width * height * 3); i = i + 6) {
+            /* y */
+            *pyuv++ = CLIP(0.299 * (prgb[i] - 128) + 0.587 * (prgb[i + 1] - 128) + 0.114 * (prgb[i + 2] - 128) + 128);
+            /* u */
+            *pyuv++ = CLIP(
+                    ((-0.147 * (prgb[i] - 128) - 0.289 * (prgb[i + 1] - 128) + 0.436 * (prgb[i + 2] - 128) + 128) +
+                     (-0.147 * (prgb[i + 3] - 128) - 0.289 * (prgb[i + 4] - 128) + 0.436 * (prgb[i + 5] - 128) + 128)) /
+                    2);
+            /* y1 */
+            *pyuv++ = CLIP(
+                    0.299 * (prgb[i + 3] - 128) + 0.587 * (prgb[i + 4] - 128) + 0.114 * (prgb[i + 5] - 128) + 128);
+            /* v*/
+            *pyuv++ = CLIP(
+                    ((0.615 * (prgb[i] - 128) - 0.515 * (prgb[i + 1] - 128) - 0.100 * (prgb[i + 2] - 128) + 128) +
+                     (0.615 * (prgb[i + 3] - 128) - 0.515 * (prgb[i + 4] - 128) - 0.100 * (prgb[i + 5] - 128) + 128)) /
+                    2);
+        }
+    }
+
+    static void bayer16_convert_bayer8(
+            const uint16_t* inbuf,
+            uint8_t* outbuf,
+            int width,
+            int height,
+            int shift) {
+        for (auto i = 0; i < height; i++) {
+            for (auto j = 0; j < width / 2; j++) {
+                auto temp = static_cast<uint8_t>(*inbuf++ >> shift);
+                *outbuf++ = temp;
+                *outbuf++ = temp;
+            }
+        }
+    }
 
     static std::string field2s(int val) {
         switch (val) {
@@ -311,7 +374,8 @@ namespace sevun {
                     b.bufs[i][0] = v4l2_mmap(
                         nullptr,
                         p.length,
-                        PROT_READ | PROT_WRITE, MAP_SHARED,
+                        PROT_READ | PROT_WRITE,
+                        MAP_SHARED,
                         fd,
                         buf.m.offset);
 
@@ -336,8 +400,9 @@ namespace sevun {
             FILE *fout,
             int *index,
             unsigned &count,
-            struct timespec &ts_last) {
-        char ch = '<';
+            struct timespec &ts_last,
+            const render_frame_callable& callable) {
+//        char ch = '<';
         int ret;
         struct v4l2_plane planes[VIDEO_MAX_PLANES];
         struct v4l2_buffer buf {};
@@ -357,14 +422,18 @@ namespace sevun {
             ret = v4l2_ioctl(_fd, VIDIOC_DQBUF, &buf);
             if (ret < 0 && errno == EAGAIN)
                 return 0;
+
             if (ret < 0) {
                 fprintf(stderr, "%s: failed: %s\n", "VIDIOC_DQBUF", strerror(errno));
                 return -1;
             }
+
             if (!(buf.flags & V4L2_BUF_FLAG_ERROR))
                 break;
+
             v4l2_ioctl(_fd, VIDIOC_QBUF, &buf);
         }
+
         if (fout && (!_stream_skip) && !(buf.flags & V4L2_BUF_FLAG_ERROR)) {
             for (unsigned j = 0; j < b.num_planes; j++) {
                 __u32 used = b.is_mplane ? planes[j].bytesused : buf.bytesused;
@@ -372,30 +441,47 @@ namespace sevun {
                 unsigned sz;
 
                 if (offset > used) {
-                    // Should never happen
                     fprintf(stderr, "offset %d > used %d!\n",
                             offset, used);
                     offset = 0;
                 }
-                used -= offset;
-                sz = static_cast<unsigned int>(fwrite(
-                        (char *) b.bufs[buf.index][j] + offset,
-                        1,
-                        used,
-                        fout));
 
-                if (sz != used)
-                    fprintf(stderr, "%u != %u\n", sz, used);
+                used -= offset;
+
+                auto bitmap_ptr = (uint8_t*)b.bufs[buf.index][j] + offset;
+
+//                bayer16_convert_bayer8(
+//                        reinterpret_cast<uint16_t*>(bitmap_ptr),
+//                        bayer_temp,
+//                        width,
+//                        height,
+//                        2);
+//                bayer_mono_to_rgb24(bayer_temp, rgb24_temp, width, height, 0);
+//                rgb2yuyv (rgb24_temp, yuyv_temp, width, height);
+
+//                sz = static_cast<unsigned int>(fwrite(
+//                        yuyv_temp,
+//                        1,
+//                        (width*height)*3,
+//                        fout));
+
+//                fmt::print("{}\n\n", hex_formatter::dump_to_string(bitmap_ptr, 384000));
+//                sz = static_cast<unsigned int>(fwrite(
+//                        bitmap_ptr,
+//                        1,
+//                        used,
+//                        fout));
+                if (!callable(bitmap_ptr, used))
+                    return -1;
+
+//              if (sz != used)
+//                    fprintf(stderr, "%u != %u\n", sz, used);
             }
         }
-        if (buf.flags & V4L2_BUF_FLAG_KEYFRAME)
-            ch = 'K';
-        else if (buf.flags & V4L2_BUF_FLAG_PFRAME)
-            ch = 'P';
-        else if (buf.flags & V4L2_BUF_FLAG_BFRAME)
-            ch = 'B';
+
         if (index == nullptr && v4l2_ioctl(_fd, VIDIOC_QBUF, &buf))
             return -1;
+
         if (index)
             *index = buf.index;
 
@@ -458,7 +544,8 @@ namespace sevun {
     void device::capture_stream(
             sevun::result &result,
             const std::string& output_path,
-            uint32_t stream_count) {
+            uint32_t stream_count,
+            const render_frame_callable& callable) {
         _stream_count = stream_count;
         _stream_skip = 0;
 
@@ -570,7 +657,8 @@ namespace sevun {
                         fout,
                         nullptr,
                         count,
-                        ts_last);
+                        ts_last,
+                        callable);
                 if (r == -1)
                     break;
             }

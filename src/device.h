@@ -1,5 +1,6 @@
 #pragma once
 
+#include <functional>
 #include "result.h"
 #include "buffers.h"
 
@@ -36,6 +37,8 @@ namespace sevun {
 
     class device {
     public:
+        using render_frame_callable = std::function<bool (uint8_t*, size_t)>;
+
         explicit device(const std::string& path);
 
         virtual ~device();
@@ -47,7 +50,8 @@ namespace sevun {
         void capture_stream(
             sevun::result &result,
             const std::string& output_path,
-            uint32_t stream_count);
+            uint32_t stream_count,
+            const render_frame_callable& callable);
 
     private:
         int do_handle_cap(
@@ -55,7 +59,8 @@ namespace sevun {
             FILE *fout,
             int *index,
             unsigned int &count,
-            timespec &ts_last);
+            timespec &ts_last,
+            const render_frame_callable& callable);
 
         int do_ioctl_name(
             sevun::result& result,

@@ -1,6 +1,7 @@
 #include <vector>
 #include <string>
 #include <cstdint>
+#include <SDL2/SDL.h>
 #include <fmt/format.h>
 #include "result.h"
 #include "device.h"
@@ -44,7 +45,83 @@ int main(int argc, char** argv) {
     fmt::print("async_io                    {}\n", info.capabilities.async_io);
     fmt::print("streaming                   {}\n", info.capabilities.streaming);
 
-    video_device.capture_stream(result, "capture.raw", 10);
+    auto window = SDL_CreateWindow(
+            "Sevun OV7251 Test",
+            SDL_WINDOWPOS_CENTERED,
+            SDL_WINDOWPOS_CENTERED,
+            640,
+            480,
+            SDL_WINDOW_OPENGL | SDL_WINDOW_SHOWN);
+
+    auto renderer = SDL_CreateRenderer(
+            window,
+            -1,
+            SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+
+    auto texture = SDL_CreateTexture(
+            renderer,
+            SDL_PIXELFORMAT_RGBA32,
+            SDL_TEXTUREACCESS_STREAMING,
+            320,
+            240);
+
+    auto surface = SDL_CreateRGBSurfaceWithFormat(
+            0,
+            320,
+            240,
+            32,
+            SDL_PIXELFORMAT_RGB565);
+    SDL_SetSurfaceBlendMode(surface, SDL_BLENDMODE_NONE);
+
+//    SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "linear");
+//    SDL_RenderSetLogicalSize(
+//            renderer,
+//            640,
+//            480);
+
+    video_device.capture_stream(
+            result,
+            "capture.raw",
+            0,
+            [&](uint8_t* data, size_t len) {
+                SDL_Event e {};
+
+                while (SDL_PollEvent(&e) != 0) {
+                    if (e.type == SDL_QUIT) {
+                        return false;
+                    } else if (e.type == SDL_KEYDOWN) {
+                        switch (e.key.keysym.sym) {
+                            case SDLK_ESCAPE: {
+                                return false;
+                            }
+                            default: {
+                                break;
+                            }
+                        }
+                    }
+                }
+
+                SDL_LockSurface(surface);
+                memcpy(surface->pixels, data, len);
+                SDL_UnlockSurface(surface);
+
+                SDL_UpdateTexture(
+                        texture,
+                        nullptr,
+                        surface->pixels,
+                        surface->pitch);
+
+                SDL_RenderCopy(
+                        renderer,
+                        texture,
+                        nullptr,
+                        nullptr);
+
+                SDL_RenderPresent(renderer);
+
+                return true;
+            });
+
 
     return 0;
 }
