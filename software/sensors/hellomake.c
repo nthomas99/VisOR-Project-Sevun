@@ -1,10 +1,7 @@
 #include <stdio.h>
 #include <linux/i2c-dev.h>
 #include <fcntl.h>
-
-// be sure to 'sudo apt-get install libi2c-dev' 
-// *after* i2c-tools or whatever got you the command line interface.
-// this gets you an updated i2c-dev.h
+#include <unistd.h>
 
 int main()
 {
