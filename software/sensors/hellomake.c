@@ -1,10 +1,48 @@
+/******************************************************************
+ * Visor Data Logger
+ * Accelerometer and Magnetometer Example
+ * Developed by Sevun Scientific, Inc.
+ * http://sevunscientific.com
+ * *****************************************************************
+ *
+ *    _____/\\\\\\\\\\\_______/\\\\\\\\\\\____/\\\\\\\\\\\_
+ *     ___/\\\/////////\\\___/\\\/////////\\\_\/////\\\///__
+ *      __\//\\\______\///___\//\\\______\///______\/\\\_____
+ *       ___\////\\\___________\////\\\_____________\/\\\_____
+ *        ______\////\\\___________\////\\\__________\/\\\_____
+ *         _________\////\\\___________\////\\\_______\/\\\_____
+ *          __/\\\______\//\\\___/\\\______\//\\\______\/\\\_____
+ *           _\///\\\\\\\\\\\/___\///\\\\\\\\\\\/____/\\\\\\\\\\\_
+ *            ___\///////////_______\///////////_____\///////////__
+ *
+ * *****************************************************************
+ */
+
 #include <stdio.h>
+#include <stdint.h>
 #include <linux/i2c-dev.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include "ag/fxos8700cq_linaro.h"
+
+// Define FXOS8700CQ I2C address, determined by PCB layout with pins SA0=1, SA1=0
+#define AG_SLAVE_ADDR       0x1D
+
+//*****************************************************************************
+// I2C Functions
+//*****************************************************************************
+
+// see fxas8700cq.c for accelerometer and magnetometer functions
+
 
 int main()
 {
+    //*****************************************************************************
+    // Main Code
+    //*****************************************************************************
+
+    I2CAGReceive(0, 0, 0, 0); 
+    
 
   //
   // open file handle to bus
@@ -24,7 +62,7 @@ int main()
   //
   // set address of device
   //
-  int addr = 0x1d; /* The I2C address */
+  int addr = AG_SLAVE_ADDR; /* The I2C address */
   if (ioctl(file, I2C_SLAVE, addr) < 0) {
     /* ERROR HANDLING; you can check errno to see what went wrong */
     printf("address failed.\n");
@@ -93,8 +131,8 @@ int main()
   // close file and exit
   //
 
-   // printf() displays the string inside quotation
-   printf("Hello, World!\n");
-   close(file);
-   return 0;
+  // printf() displays the string inside quotation
+  printf("Hello, World!\n");
+  close(file);
+  return 0;
 }
