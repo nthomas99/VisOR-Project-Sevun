@@ -24,6 +24,7 @@
 #include <fcntl.h>
 #include <unistd.h>
 #include "ag/fxos8700cq_linaro.h"
+#include "ag/fxos8700cq.h" 
 
 // Define FXOS8700CQ I2C address, determined by PCB layout with pins SA0=1, SA1=0
 #define AG_SLAVE_ADDR       0x1D
@@ -41,8 +42,24 @@ int main()
     // Main Code
     //*****************************************************************************
 
-    I2CAGReceive(0x1d, 0x0d, 0, 0); 
+    // Clear and reset home screen
+    printf("\033[2J\033[;H");
+    printf("Hello");
+
+    uint8_t ui32Data[1];
+
+    // Get WHO_AM_I register, return should be 0xC7
+    I2CAGReceive(AG_SLAVE_ADDR, AG_WHO_AM_I, ui32Data, sizeof(ui32Data));
+    if ( 0xC7 == ui32Data[0] )
+    {
+        printf("\r\n... FXOS8700CQ is alive!!!");
+    }
+    else
+    {
+        printf("\r\n... FXOS8700CQ is NOT alive.");
+    }
     
+  printf("\r\n");
 
   //
   // open file handle to bus
