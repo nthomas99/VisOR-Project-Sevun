@@ -44,7 +44,7 @@ int main()
 
     // Clear and reset home screen
     printf("\033[2J\033[;H");
-    printf("Hello");
+    printf("Verifying connection ");
 
     uint8_t ui32Data[1];
 
@@ -57,99 +57,52 @@ int main()
     else
     {
         printf("\r\n... FXOS8700CQ is NOT alive.");
+        printf("\r\n");
+        return 0;
     }
+
+    // ***********************Print register values for testing feedback
+    I2CAGReceive(AG_SLAVE_ADDR, AG_CTRL_REG1, ui32Data, sizeof(ui32Data));
+    printf("\r\n0x%02X 0x%02x",AG_CTRL_REG1,ui32Data[0]);
+
+    I2CAGReceive(AG_SLAVE_ADDR, AG_XYZ_DATA_CFG, ui32Data, sizeof(ui32Data));
+    printf("\r\n0x%02X 0x%02x",AG_XYZ_DATA_CFG,ui32Data[0]);
+
+    I2CAGReceive(AG_SLAVE_ADDR, AG_M_CTRL_REG1, ui32Data, sizeof(ui32Data));
+    printf("\r\n0x%02X 0x%02x",AG_M_CTRL_REG1,ui32Data[0]);
+    // ***********************Print register values for testing feedback
+
+    // Put the device into standby before changing register values
+    AGStandby(AG_SLAVE_ADDR);
+
+    // Choose the range of the accelerometer (±2G,±4G,±8G)
+    AGAccelRange(AG_SLAVE_ADDR, AFSR_2G);
+
+    // Choose the output data rate (800 Hz, 400 Hz, 200 Hz, 100 Hz,
+    //  50 Hz, 12.5 Hz, 6.25 Hz, 1.56 Hz). Rate is cut in half when
+    //  running in hybrid mode (accelerometer and magnetometer active)
+    AGOutputDataRate(AG_SLAVE_ADDR, ODR_1_56HZ);
+
+    // Choose if both the acclerometer and magnetometer will both be used
+    //  IF BOTH ARE USED THAN OUTPUT DATA RATE IS SHARED.
+    //  E.G. 100 HZ ODR MEANS ACCELEROMETER WILL SAMPLE AT 50 HZ
+    //    AND MAGNETOMETER WILL SAMPLE AT 50 HZ
+    AGHybridMode(AG_SLAVE_ADDR, ACCEL_AND_MAG);
+
+    // Activate the data device
+    AGActive(AG_SLAVE_ADDR);
+
+    // ***********************Print register values for testing feedback
+    I2CAGReceive(AG_SLAVE_ADDR, AG_CTRL_REG1, ui32Data, sizeof(ui32Data));
+    printf("\r\n0x%02X 0x%02x",AG_CTRL_REG1,ui32Data[0]);
+
+    I2CAGReceive(AG_SLAVE_ADDR, AG_XYZ_DATA_CFG, ui32Data, sizeof(ui32Data));
+    printf("\r\n0x%02X 0x%02x",AG_XYZ_DATA_CFG,ui32Data[0]);
+
+    I2CAGReceive(AG_SLAVE_ADDR, AG_M_CTRL_REG1, ui32Data, sizeof(ui32Data));
+    printf("\r\n0x%02X 0x%02x",AG_M_CTRL_REG1,ui32Data[0]);
+    // ***********************Print register values for testing feedback
     
-  printf("\r\n");
-
-  //
-  // open file handle to bus
-  //
-  int file;
-  int adapter_nr = 1; /* probably dynamically determined */
-  char filename[20];
-
-  snprintf(filename, 19, "/dev/i2c-%d", adapter_nr);
-  file = open(filename, O_RDWR);
-  if (file < 0) {
-    /* ERROR HANDLING; you can check errno to see what went wrong */
-    printf("open failed.\n");
-    return 1;
-  }
-
-  //
-  // set address of device
-  //
-  int addr = AG_SLAVE_ADDR; /* The I2C address */
-  if (ioctl(file, I2C_SLAVE, addr) < 0) {
-    /* ERROR HANDLING; you can check errno to see what went wrong */
-    printf("address failed.\n");
-    return 1;
-  }
-
-  //
-  // try to read
-  //
-  __u8 reg = 0x0d; /* Device register to access */
-  __u8 res;
-  char buf[10];
-  /* Using SMBus commands */
-  res = i2c_smbus_read_byte_data(file, reg);
-  if (res < 0) {
-    /* ERROR HANDLING: i2c transaction failed */
-    printf("read failed.\n");
-    return 1;
-  } else {
-    /* res contains the read word */
-    printf("WHO_AM_I = 0x%x\n", res);
-  }
-
-  //
-  // try to read/write/read
-  //
-  // read 1
-  reg = 0x11; /* Device register to access */
-  /* Using SMBus commands */
-  res = i2c_smbus_read_byte_data(file, reg);
-  if (res < 0) {
-    /* ERROR HANDLING: i2c transaction failed */
-    printf("read1 failed.\n");
-    return 1;
-  } else {
-    /* res contains the read word */
-    printf("PL_CFG = 0x%x\n", res);
-  }
-  
-  // write 1
-  __u8 val = 0xC0;
-  reg = 0x11; /* Device register to access */
-  res = i2c_smbus_write_byte_data (file, reg, val);
-  if (res < 0) {
-    /* ERROR HANDLING: i2c transaction failed */
-    printf("write1 failed.\n");
-    return 1;
-  } else {
-    //all good
-  }
-  
-  // read 2
-  reg = 0x11; /* Device register to access */
-  /* Using SMBus commands */
-  res = i2c_smbus_read_byte_data(file, reg);
-  if (res < 0) {
-    /* ERROR HANDLING: i2c transaction failed */
-    printf("read2 failed.\n");
-    return 1;
-  } else {
-    /* res contains the read word */
-    printf("PL_CFG = 0x%x\n", res);
-  }
-
-  //
-  // close file and exit
-  //
-
-  // printf() displays the string inside quotation
-  printf("Hello, World!\n");
-  close(file);
-  return 0;
+    printf("\r\n");
+    return 0;
 }
