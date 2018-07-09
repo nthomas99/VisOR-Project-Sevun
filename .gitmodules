@@ -2,5 +2,5 @@
 	path = hardware/cots/Library
 	url = git@github.com:sevun/library-altium.git
 [submodule "software/sensors/ag"]
-	path = software/accel/ag
+	path = software/accelmag/ag
 	url = git@github.com:counterwound/fxos8700cq.git
