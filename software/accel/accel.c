@@ -35,9 +35,11 @@
 
 // see fxas8700cq.c for accelerometer and magnetometer functions
 
-
 int main()
 {
+    tRawData tAccelData;      // Accelerometer data
+    tRawData tMagData;        // Magnetometer data
+
     //*****************************************************************************
     // Main Code
     //*****************************************************************************
@@ -61,17 +63,6 @@ int main()
         return 0;
     }
 
-    // ***********************Print register values for testing feedback
-    I2CAGReceive(AG_SLAVE_ADDR, AG_CTRL_REG1, ui32Data, sizeof(ui32Data));
-    printf("\r\n0x%02X 0x%02x",AG_CTRL_REG1,ui32Data[0]);
-
-    I2CAGReceive(AG_SLAVE_ADDR, AG_XYZ_DATA_CFG, ui32Data, sizeof(ui32Data));
-    printf("\r\n0x%02X 0x%02x",AG_XYZ_DATA_CFG,ui32Data[0]);
-
-    I2CAGReceive(AG_SLAVE_ADDR, AG_M_CTRL_REG1, ui32Data, sizeof(ui32Data));
-    printf("\r\n0x%02X 0x%02x",AG_M_CTRL_REG1,ui32Data[0]);
-    // ***********************Print register values for testing feedback
-
     // Put the device into standby before changing register values
     AGStandby(AG_SLAVE_ADDR);
 
@@ -81,7 +72,7 @@ int main()
     // Choose the output data rate (800 Hz, 400 Hz, 200 Hz, 100 Hz,
     //  50 Hz, 12.5 Hz, 6.25 Hz, 1.56 Hz). Rate is cut in half when
     //  running in hybrid mode (accelerometer and magnetometer active)
-    AGOutputDataRate(AG_SLAVE_ADDR, ODR_1_56HZ);
+    AGOutputDataRate(AG_SLAVE_ADDR, ODR_6_25HZ);
 
     // Choose if both the acclerometer and magnetometer will both be used
     //  IF BOTH ARE USED THAN OUTPUT DATA RATE IS SHARED.
@@ -92,16 +83,13 @@ int main()
     // Activate the data device
     AGActive(AG_SLAVE_ADDR);
 
-    // ***********************Print register values for testing feedback
-    I2CAGReceive(AG_SLAVE_ADDR, AG_CTRL_REG1, ui32Data, sizeof(ui32Data));
-    printf("\r\n0x%02X 0x%02x",AG_CTRL_REG1,ui32Data[0]);
+    AGGetData(AG_SLAVE_ADDR, ACCEL_DATA, &tAccelData );
+    AGGetData(AG_SLAVE_ADDR, MAG_DATA, &tMagData );
 
-    I2CAGReceive(AG_SLAVE_ADDR, AG_XYZ_DATA_CFG, ui32Data, sizeof(ui32Data));
-    printf("\r\n0x%02X 0x%02x",AG_XYZ_DATA_CFG,ui32Data[0]);
-
-    I2CAGReceive(AG_SLAVE_ADDR, AG_M_CTRL_REG1, ui32Data, sizeof(ui32Data));
-    printf("\r\n0x%02X 0x%02x",AG_M_CTRL_REG1,ui32Data[0]);
-    // ***********************Print register values for testing feedback
+    // ***********************Print values for testing feedback
+    printf("\r\nAccelerometer X:%d Y:%d Z:%d",tAccelData.x,tAccelData.y,tAccelData.z);
+    printf("\r\nMagnetometer  X:%d Y:%d Z:%d",tMagData.x,tMagData.y,tMagData.z);
+    // ***********************Print values for testing feedback
     
     printf("\r\n");
     return 0;
