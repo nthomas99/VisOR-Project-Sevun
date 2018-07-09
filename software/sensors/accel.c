@@ -23,7 +23,7 @@
 #include <linux/i2c-dev.h>
 #include <fcntl.h>
 #include <unistd.h>
-#include "ag/fxos8700cq_linaro.h"
+#include "ag/fxos8700cq_proc.h"
 #include "ag/fxos8700cq.h" 
 
 // Define FXOS8700CQ I2C address, determined by PCB layout with pins SA0=1, SA1=0
