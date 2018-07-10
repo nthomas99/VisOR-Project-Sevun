@@ -37,8 +37,7 @@
 
 int main()
 {
-//    tRawData tAccelData;      // Accelerometer data
-//    tRawData tMagData;        // Magnetometer data
+    tRawData tGyroData;      // Gyroscope data
 
     //*****************************************************************************
     // Main Code
@@ -64,17 +63,31 @@ int main()
     }
 
     // Put the device into standby before changing register values
-    GyroStandby(GYRO_SLAVE_ADDR);
+//    GyroStandby(GYRO_SLAVE_ADDR);
+
+    // Reset the Gyro
+//    GyroReset(GYRO_SLAVE_ADDR);
+
+      GyroSelfTest(GYRO_SLAVE_ADDR, 1);
 
     // Activate the data device
-    GyroReady(GYRO_SLAVE_ADDR);
+//    GyroReady(GYRO_SLAVE_ADDR);
 
     // Activate the data device
-    GyroActive(GYRO_SLAVE_ADDR);
+//    GyroActive(GYRO_SLAVE_ADDR);
+
+    // Temperature
+//    GyroTemp(GYRO_SLAVE_ADDR);
 
     // ***********************Print values for testing feedback
     I2CGyroReceive(GYRO_SLAVE_ADDR, GYRO_CTRL_REG1, ui32Data, sizeof(ui32Data));
     printf("\r\nGYRO_CTRL_REG1=0x%02X",ui32Data[0]);
+    // ***********************Print values for testing feedback
+
+    GyroGetData(GYRO_SLAVE_ADDR, &tGyroData );
+
+    // ***********************Print values for testing feedback
+    printf("\r\nGyroscope X:%d Y:%d Z:%d",tGyroData.x,tGyroData.y,tGyroData.z);
     // ***********************Print values for testing feedback
 
     printf("\r\n");
