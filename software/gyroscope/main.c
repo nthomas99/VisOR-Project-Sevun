@@ -45,49 +45,70 @@ int main()
 
     // Clear and reset home screen
     printf("\033[2J\033[;H");
-    printf("Verifying connection ");
+    printf("Verifying connection");
 
-    uint8_t ui32Data[1];
+    uint8_t ui8Data[1];
 
     // Get WHO_AM_I register, return should be 0x0C
-    I2CGyroReceive(GYRO_SLAVE_ADDR, GYRO_WHO_AM_I, ui32Data, sizeof(ui32Data));
-    if ( 0xD7 == ui32Data[0] )
+    I2CGyroReceive(GYRO_SLAVE_ADDR, GYRO_WHO_AM_I, ui8Data, sizeof(ui8Data));
+    if ( 0xD7 == ui8Data[0] )
     {
-        printf("\r\n... FXAS21002C is alive!!!");
+        printf(" ... FXAS21002C is alive!!!");
     }
     else
     {
-        printf("\r\n... FXAS21002C is NOT alive.");
+        printf(" ... FXAS21002C is NOT alive.");
         printf("\r\n");
         return 0;
     }
 
-    // Put the device into standby before changing register values
-//    GyroStandby(GYRO_SLAVE_ADDR);
-
     // Reset the Gyro
-//    GyroReset(GYRO_SLAVE_ADDR);
+    printf("\r\nResetting device");
+    GyroReset(GYRO_SLAVE_ADDR);
 
-      GyroSelfTest(GYRO_SLAVE_ADDR, 1);
+    sleep(1); //FIXME this should be replaced with a test to see if device is back
+    printf(" ... Done");
+
+    // ***********************Print values for testing feedback
+    I2CGyroReceive(GYRO_SLAVE_ADDR, GYRO_CTRL_REG0, ui8Data, sizeof(ui8Data));
+    printf("\r\nGYRO_CTRL_REG0=0x%02X",ui8Data[0]);
+    I2CGyroReceive(GYRO_SLAVE_ADDR, GYRO_CTRL_REG1, ui8Data, sizeof(ui8Data));
+    printf("\r\nGYRO_CTRL_REG1=0x%02X",ui8Data[0]);
+    // ***********************Print values for testing feedback
+
+    // Put the device into standby before changing register values
+    GyroStandby(GYRO_SLAVE_ADDR);
+
+    // Choose the range of the accelerometer (2000,1000,500,250 dps)
+    GyroRange(GYRO_SLAVE_ADDR, GFSR_250PS);
+
+//      GyroSelfTest(GYRO_SLAVE_ADDR, 1);
 
     // Activate the data device
 //    GyroReady(GYRO_SLAVE_ADDR);
 
     // Activate the data device
-//    GyroActive(GYRO_SLAVE_ADDR);
+//    GyroActive(GYRO_SLAVE_ADDR);    
+
+    // ***********************Print values for testing feedback
+    I2CGyroReceive(GYRO_SLAVE_ADDR, GYRO_CTRL_REG0, ui8Data, sizeof(ui8Data));
+    printf("\r\nGYRO_CTRL_REG0=0x%02X",ui8Data[0]);
+    I2CGyroReceive(GYRO_SLAVE_ADDR, GYRO_CTRL_REG1, ui8Data, sizeof(ui8Data));
+    printf("\r\nGYRO_CTRL_REG1=0x%02X",ui8Data[0]);
+    // ***********************Print values for testing feedback
 
     // Temperature
 //    GyroTemp(GYRO_SLAVE_ADDR);
 
     // ***********************Print values for testing feedback
-    I2CGyroReceive(GYRO_SLAVE_ADDR, GYRO_CTRL_REG1, ui32Data, sizeof(ui32Data));
-    printf("\r\nGYRO_CTRL_REG1=0x%02X",ui32Data[0]);
+//    I2CGyroReceive(GYRO_SLAVE_ADDR, GYRO_CTRL_REG1, ui8Data, sizeof(ui8Data));
+//    printf("\r\nGYRO_CTRL_REG1=0x%02X",ui8Data[0]);
     // ***********************Print values for testing feedback
 
-    GyroGetData(GYRO_SLAVE_ADDR, &tGyroData );
+//    GyroGetData(GYRO_SLAVE_ADDR, &tGyroData );
 
     // ***********************Print values for testing feedback
-    printf("\r\nGyroscope X:%d Y:%d Z:%d",tGyroData.x,tGyroData.y,tGyroData.z);
+//    printf("\r\nGyroscope X:%d Y:%d Z:%d",tGyroData.x,tGyroData.y,tGyroData.z);
     // ***********************Print values for testing feedback
 
     printf("\r\n");
