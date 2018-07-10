@@ -82,20 +82,30 @@ int main()
     // Choose the range of the accelerometer (2000,1000,500,250 dps)
     GyroRange(GYRO_SLAVE_ADDR, GFSR_250PS);
 
-//      GyroSelfTest(GYRO_SLAVE_ADDR, 1);
+    // Choose the output data rate (800 Hz, 400 Hz, 200 Hz, 100 Hz,
+    //  50 Hz, 25 Hz, 12.5 Hz)
+    GyroOutputDataRate(GYRO_SLAVE_ADDR, ODR_12_5HZ);
 
     // Activate the data device
-//    GyroReady(GYRO_SLAVE_ADDR);
+    GyroActive(GYRO_SLAVE_ADDR);    
 
-    // Activate the data device
-//    GyroActive(GYRO_SLAVE_ADDR);    
+    GyroGetData(GYRO_SLAVE_ADDR, &tGyroData );
 
     // ***********************Print values for testing feedback
     I2CGyroReceive(GYRO_SLAVE_ADDR, GYRO_CTRL_REG0, ui8Data, sizeof(ui8Data));
     printf("\r\nGYRO_CTRL_REG0=0x%02X",ui8Data[0]);
     I2CGyroReceive(GYRO_SLAVE_ADDR, GYRO_CTRL_REG1, ui8Data, sizeof(ui8Data));
     printf("\r\nGYRO_CTRL_REG1=0x%02X",ui8Data[0]);
+
+
+    printf("\r\nX:%04X Y:%04X Z:%04X",
+                tGyroData.x,tGyroData.y,tGyroData.z);
     // ***********************Print values for testing feedback
+
+//      GyroSelfTest(GYRO_SLAVE_ADDR, 1);
+
+    // Activate the data device
+//    GyroReady(GYRO_SLAVE_ADDR);
 
     // Temperature
 //    GyroTemp(GYRO_SLAVE_ADDR);
@@ -105,7 +115,7 @@ int main()
 //    printf("\r\nGYRO_CTRL_REG1=0x%02X",ui8Data[0]);
     // ***********************Print values for testing feedback
 
-//    GyroGetData(GYRO_SLAVE_ADDR, &tGyroData );
+
 
     // ***********************Print values for testing feedback
 //    printf("\r\nGyroscope X:%d Y:%d Z:%d",tGyroData.x,tGyroData.y,tGyroData.z);
