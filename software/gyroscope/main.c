@@ -62,6 +62,9 @@ int main()
         return 0;
     }
 
+    // Put the device into standby before changing register values
+    GyroStandby(GYRO_SLAVE_ADDR);
+
     // Reset the Gyro
     printf("\r\nResetting device");
     GyroReset(GYRO_SLAVE_ADDR);
@@ -89,18 +92,21 @@ int main()
     // Activate the data device
     GyroActive(GYRO_SLAVE_ADDR);    
 
-    GyroGetData(GYRO_SLAVE_ADDR, &tGyroData );
+    sleep(1); //FIXME this should be replaced with a test to see if device is back
+
 
     // ***********************Print values for testing feedback
     I2CGyroReceive(GYRO_SLAVE_ADDR, GYRO_CTRL_REG0, ui8Data, sizeof(ui8Data));
     printf("\r\nGYRO_CTRL_REG0=0x%02X",ui8Data[0]);
     I2CGyroReceive(GYRO_SLAVE_ADDR, GYRO_CTRL_REG1, ui8Data, sizeof(ui8Data));
     printf("\r\nGYRO_CTRL_REG1=0x%02X",ui8Data[0]);
-
-
-    printf("\r\nX:%04X Y:%04X Z:%04X",
-                tGyroData.x,tGyroData.y,tGyroData.z);
     // ***********************Print values for testing feedback
+
+    while (1)
+{
+    GyroGetData(GYRO_SLAVE_ADDR, &tGyroData );  
+    printf("\r\nX:%04X Y:%04X Z:%04X", tGyroData.x,tGyroData.y,tGyroData.z);
+}
 
 //      GyroSelfTest(GYRO_SLAVE_ADDR, 1);
 
