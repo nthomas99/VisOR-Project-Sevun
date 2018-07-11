@@ -112,7 +112,7 @@ int main()
         AGGetData(AG_SLAVE_ADDR, ACCEL_DATA, &g_tAccelData );
         AGGetData(AG_SLAVE_ADDR, MAG_DATA, &g_tMagData );
 
-        printf("\r\nACCEL X:%d Y:%d Z:%d  MAG X:%d Y:%d Z:%d",
+        printf("\r\nACCEL X:%6d Y:%6d Z:%6d  MAG X:%6d Y:%6d Z:%6d",
                    g_tAccelData.x,g_tAccelData.y,g_tAccelData.z,
                    g_tMagData.x,g_tMagData.y,g_tMagData.z);
         sleep(1);
