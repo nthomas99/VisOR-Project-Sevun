@@ -13,9 +13,24 @@ cd  ~
 wget sevun.com/key.tar.gz
 #unzip ssh key
 tar -xzvf ~/key.tar.gz
+rm ~/key.tar.gz
 
+
+
+#USING LIBI2C-DEV ONLY
 #commands to run right at the beginning
 #be sure to 'sudo apt-get install libi2c-dev' *after* i2c-tools
 sudo apt-get install gedit
 sudo apt-get install i2c-tools
 sudo apt-get install libi2c-dev
+
+#USING LIBSOC
+#install prerequsites
+sudo apt-get install autoconf build-essential libtool-bin pkg-config
+sudo apt-get install automake
+git clone https://github.com/jackmitch/libsoc.git
+cd libsoc
+autoreconf -i
+./configure --enable-board=dragonboard410c --with-board-configs
+make
+make install
