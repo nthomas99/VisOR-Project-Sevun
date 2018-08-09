@@ -1,3 +1,9 @@
 [submodule "hardware/cots/Library"]
 	path = hardware/cots/Library
 	url = git@github.com:sevun/library-altium.git
+[submodule "software/sensors/ag"]
+	path = software/accelmag/ag
+	url = git@github.com:counterwound/fxos8700cq.git
+[submodule "software/gyro/gyro"]
+	path = software/gyroscope/gy
+	url = git@github.com:counterwound/fxas21002c.git

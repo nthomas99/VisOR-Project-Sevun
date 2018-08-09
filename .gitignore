@@ -5,6 +5,7 @@
 *.raw
 *.log
 *.pdf
+bin
 
 # Altium
 *.AnnotationPreview
@@ -12,7 +13,7 @@
 *.PrjPCBStructure
 *.PcbDoc.htm
 *.Cam
-_Previews
+__Previews
 History
 Design\ Rule*.*
 hardware/Project\ Logs*
