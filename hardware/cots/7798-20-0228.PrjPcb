@@ -106,7 +106,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document5]
-DocumentPath=Library\FCI\fci.IntLib
+DocumentPath=Library\CandK\candk.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -123,7 +123,7 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document6]
-DocumentPath=Library\Samtec\samtec.IntLib
+DocumentPath=Library\FCI\fci.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
 AnnotationIndexControlEnabled=0
@@ -140,6 +140,23 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document7]
+DocumentPath=Library\Samtec\samtec.IntLib
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[Document8]
 DocumentPath=_power.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=100
@@ -156,7 +173,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=CBWFXGQG
 
-[Document8]
+[Document9]
 DocumentPath=Library\CUI\cui.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -173,7 +190,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document9]
+[Document10]
 DocumentPath=Library\standard_capacitors.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -190,7 +207,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document10]
+[Document11]
 DocumentPath=Library\standard_resistors.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -207,7 +224,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document11]
+[Document12]
 DocumentPath=Library\miscellaneous_connectors.IntLIb
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -224,7 +241,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document12]
+[Document13]
 DocumentPath=Library\miscellaneous_devices.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -241,7 +258,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document13]
+[Document14]
 DocumentPath=Library\Lite-On\lite-on.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -258,7 +275,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document14]
+[Document15]
 DocumentPath=Library\Linear_Technology\linear_technology.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -275,7 +292,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document15]
+[Document16]
 DocumentPath=_io.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=200
@@ -292,7 +309,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=UUOHOLUI
 
-[Document16]
+[Document17]
 DocumentPath=Library\Rohm\rohm.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
