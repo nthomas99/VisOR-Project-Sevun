@@ -327,23 +327,6 @@ GenerateClassCluster=0
 DocumentUniqueId=
 
 [Document18]
-DocumentPath=_accel_mag.SchDoc
-AnnotationEnabled=1
-AnnotateStartValue=300
-AnnotationIndexControlEnabled=1
-AnnotateSuffix=
-AnnotateScope=All
-AnnotateOrder=4
-DoLibraryUpdate=1
-DoDatabaseUpdate=1
-ClassGenCCAutoEnabled=0
-ClassGenCCAutoRoomEnabled=1
-ClassGenNCAutoScope=None
-DItemRevisionGUID=
-GenerateClassCluster=0
-DocumentUniqueId=RCIGHRRH
-
-[Document19]
 DocumentPath=_gyroscope.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=350
@@ -360,7 +343,41 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=VRYXALNE
 
+[Document19]
+DocumentPath=_accel_mag.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=300
+AnnotationIndexControlEnabled=1
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=4
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=0
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=RCIGHRRH
+
 [Document20]
+DocumentPath=_klt-kr7-ov7251.SchDoc
+AnnotationEnabled=1
+AnnotateStartValue=600
+AnnotationIndexControlEnabled=1
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=8
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=0
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=IRFASCRG
+
+[Document21]
 DocumentPath=_li-ov5640-mipi-af.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=400
@@ -377,7 +394,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=AAKWXBYC
 
-[Document21]
+[Document22]
 DocumentPath=Library\NXP\nxp.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -394,7 +411,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document22]
+[Document23]
 DocumentPath=Library\Panasonic\panasonic.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -411,7 +428,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document23]
+[Document24]
 DocumentPath=Library\Hirose\hirose.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -428,7 +445,7 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document24]
+[Document25]
 DocumentPath=Library\Texas_Instruments\texas_instruments.IntLib
 AnnotationEnabled=1
 AnnotateStartValue=1
@@ -445,8 +462,8 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=
 
-[Document25]
-DocumentPath=_klt-kr7-ov7251.SchDoc
+[Document26]
+DocumentPath=_klt-j4k-ov2732.SchDoc
 AnnotationEnabled=1
 AnnotateStartValue=500
 AnnotationIndexControlEnabled=1
