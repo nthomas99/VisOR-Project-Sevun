@@ -1,0 +1,22 @@
+----------------------------------------------------------------------------------------------------------------------------------
+NCDrill File Report For: 7798-20-0228.PcbDoc   9/24/2018  9:40:56 AM
+----------------------------------------------------------------------------------------------------------------------------------
+
+Layer Pair : Top Signal to Bottom Signal
+ASCII RoundHoles File : 7798-20-0228-RoundHoles.TXT
+ASCII SlotHoles File : 7798-20-0228-SlotHoles.TXT
+
+Tool       Hole Size               Hole Tolerance               Hole Type       Hole Count   Plated         Tool Travel
+----------------------------------------------------------------------------------------------------------------------------------
+T1      8mil (0.2mm)                                              Round             12        PTH        1.95inch (49.61mm)
+T2      8mil (0.203mm)                                            Round             239       PTH        34.79inch (883.58mm)
+T3      12mil (0.305mm)                                           Round             28        PTH        4.17inch (105.85mm)
+T4      25mil (0.635mm)                                           Round             16        PTH        7.72inch (196.05mm)
+T5      35mil (0.9mm)                                             Round             50        PTH        7.40inch (187.88mm)
+T6      39mil (1mm)                                               Slot              3         PTH        1.00inch (25.32mm)
+T7      32mil (0.8mm)                                             Round             1         NPTH       0.00inch (0.00mm)
+T8      47mil (1.2mm)                                             Round             1         NPTH       0.00inch (0.00mm)
+----------------------------------------------------------------------------------------------------------------------------------
+Totals                                                                              350
+
+Total Processing Time (hh:mm:ss) : 00:00:00

@@ -1,0 +1,685 @@
+*************************************************************
+FileName = 7798-20-0228.GBR
+AutoAperture = True
+*************************************************************
+Generating : Top Signal
+      File : 7798-20-0228.GTL
+
+    Adding Layer      : Top Signal
+
+    Adding Layer      : Mechanical 15
+
+    Adding Layer      : Mechanical 13
+
+    Adding Layer      : Mechanical 1
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+    D39
+    D40
+    D41
+    D42
+    D43
+    D44
+    D45
+    D46
+    D47
+    D48
+    D49
+    D50
+    D51
+    D52
+    D53
+    D54
+    D55
+    D56
+    D57
+    D58
+*************************************************************
+
+*************************************************************
+Generating : Ground Plane (GND)
+      File : 7798-20-0228.GP1
+
+    Adding Layer      : Ground Plane (GND)
+
+    Adding Layer      : Mechanical 15
+
+    Adding Layer      : Mechanical 13
+
+    Adding Layer      : Mechanical 1
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D42
+    D44
+    D45
+    D46
+    D47
+    D48
+    D59
+    D60
+    D61
+    D62
+    D63
+    D64
+    D65
+    D66
+    D67
+    D68
+    D69
+    D70
+    D71
+    D72
+    D73
+*************************************************************
+
+*************************************************************
+Generating : Inner Layer 1
+      File : 7798-20-0228.G1
+
+    Adding Layer      : Inner Layer 1
+
+    Adding Layer      : Mechanical 15
+
+    Adding Layer      : Mechanical 13
+
+    Adding Layer      : Mechanical 1
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D41
+    D42
+    D43
+    D44
+    D45
+    D46
+    D47
+    D48
+    D49
+    D50
+    D53
+    D54
+    D55
+    D56
+    D57
+    D58
+*************************************************************
+
+*************************************************************
+Generating : Inner Layer 2
+      File : 7798-20-0228.G2
+
+    Adding Layer      : Inner Layer 2
+
+    Adding Layer      : Mechanical 15
+
+    Adding Layer      : Mechanical 13
+
+    Adding Layer      : Mechanical 1
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D42
+    D43
+    D44
+    D45
+    D46
+    D47
+    D48
+    D49
+    D50
+    D53
+    D54
+    D55
+    D56
+    D57
+    D58
+*************************************************************
+
+*************************************************************
+Generating : Power Plane (VCC)
+      File : 7798-20-0228.GP2
+
+    Adding Layer      : Power Plane (VCC)
+
+    Adding Layer      : Mechanical 15
+
+    Adding Layer      : Mechanical 13
+
+    Adding Layer      : Mechanical 1
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D42
+    D44
+    D45
+    D46
+    D47
+    D48
+    D59
+    D60
+    D61
+    D62
+    D63
+    D64
+    D65
+    D68
+    D69
+    D70
+    D71
+    D72
+    D74
+    D75
+*************************************************************
+
+*************************************************************
+Generating : Bottom Signal
+      File : 7798-20-0228.GBL
+
+    Adding Layer      : Bottom Signal
+
+    Adding Layer      : Mechanical 15
+
+    Adding Layer      : Mechanical 13
+
+    Adding Layer      : Mechanical 1
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D18
+    D19
+    D23
+    D27
+    D41
+    D42
+    D43
+    D44
+    D45
+    D46
+    D47
+    D48
+    D49
+    D50
+    D51
+    D52
+    D53
+    D54
+    D55
+    D56
+    D57
+    D58
+    D76
+    D77
+*************************************************************
+
+*************************************************************
+Generating : Bottom Pad Master
+      File : 7798-20-0228.GPB
+
+    Adding Layer      : Bottom Signal
+
+    Adding Layer      : Multi-Layer
+
+    Adding Layer      : Mechanical 15
+
+    Adding Layer      : Mechanical 13
+
+    Adding Layer      : Mechanical 1
+
+
+Used DCodes :
+    D18
+    D19
+    D23
+    D27
+    D42
+    D44
+    D45
+    D46
+    D47
+    D48
+    D49
+    D50
+    D51
+    D52
+    D53
+    D54
+    D55
+    D76
+*************************************************************
+
+*************************************************************
+Generating : Top Pad Master
+      File : 7798-20-0228.GPT
+
+    Adding Layer      : Top Signal
+
+    Adding Layer      : Multi-Layer
+
+    Adding Layer      : Mechanical 15
+
+    Adding Layer      : Mechanical 13
+
+    Adding Layer      : Mechanical 1
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
+    D16
+    D17
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+    D39
+    D40
+    D42
+    D44
+    D45
+    D46
+    D47
+    D48
+    D49
+    D50
+    D51
+    D52
+    D53
+    D54
+    D55
+*************************************************************
+
+*************************************************************
+Generating : Top Overlay
+      File : 7798-20-0228.GTO
+
+    Adding Layer      : Top Overlay
+
+    Adding Layer      : Mechanical 15
+
+    Adding Layer      : Mechanical 13
+
+    Adding Layer      : Mechanical 1
+
+
+Used DCodes :
+    D42
+    D44
+    D45
+    D46
+    D47
+    D48
+    D78
+*************************************************************
+
+*************************************************************
+Generating : Top Paste
+      File : 7798-20-0228.GTP
+
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Mechanical 15
+
+    Adding Layer      : Mechanical 13
+
+    Adding Layer      : Mechanical 1
+
+    Adding Layer      : Top Signal
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D10
+    D11
+    D12
+    D13
+    D14
+    D15
+    D16
+    D18
+    D19
+    D20
+    D21
+    D22
+    D23
+    D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+    D39
+    D40
+    D42
+    D44
+    D45
+    D46
+    D47
+    D48
+    D79
+*************************************************************
+
+*************************************************************
+Generating : Top Solder
+      File : 7798-20-0228.GTS
+
+    Adding Layer      : Top Solder
+
+    Adding Layer      : Mechanical 15
+
+    Adding Layer      : Mechanical 13
+
+    Adding Layer      : Mechanical 1
+
+    Adding Layer      : Top Signal
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D42
+    D44
+    D45
+    D46
+    D47
+    D48
+    D80
+    D81
+    D82
+    D83
+    D84
+    D85
+    D86
+    D87
+    D88
+    D89
+    D90
+    D91
+    D92
+    D93
+    D94
+    D95
+    D96
+    D97
+    D98
+    D99
+    D100
+    D101
+    D102
+    D103
+    D104
+    D105
+    D106
+    D107
+    D108
+    D109
+    D110
+    D111
+    D112
+    D113
+    D114
+    D115
+    D116
+    D117
+    D118
+    D119
+    D120
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : 7798-20-0228.GBS
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Mechanical 15
+
+    Adding Layer      : Mechanical 13
+
+    Adding Layer      : Mechanical 1
+
+    Adding Layer      : Bottom Signal
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D42
+    D44
+    D45
+    D46
+    D47
+    D48
+    D88
+    D89
+    D93
+    D97
+    D111
+    D112
+    D113
+    D114
+    D115
+    D116
+    D117
+    D118
+    D119
+    D120
+    D121
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : 7798-20-0228.GBP
+
+    Adding Layer      : Bottom Paste
+
+    Adding Layer      : Mechanical 15
+
+    Adding Layer      : Mechanical 13
+
+    Adding Layer      : Mechanical 1
+
+    Adding Layer      : Bottom Signal
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D18
+    D19
+    D23
+    D27
+    D42
+    D44
+    D45
+    D46
+    D47
+    D48
+    D76
+*************************************************************
+
+*************************************************************
+Generating : Bottom Overlay
+      File : 7798-20-0228.GBO
+
+    Adding Layer      : Bottom Overlay
+
+    Adding Layer      : Mechanical 15
+
+    Adding Layer      : Mechanical 13
+
+    Adding Layer      : Mechanical 1
+
+
+Used DCodes :
+    D41
+    D42
+    D44
+    D45
+    D46
+    D47
+    D48
+    D122
+*************************************************************
+
+*************************************************************
+Generating : Keep-Out Layer
+      File : 7798-20-0228.GKO
+
+    Adding Layer      : Keep-Out Layer
+
+    Adding Layer      : Mechanical 15
+
+    Adding Layer      : Mechanical 13
+
+    Adding Layer      : Mechanical 1
+
+
+Used DCodes :
+    D42
+    D44
+    D45
+    D46
+    D47
+    D48
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 15
+      File : 7798-20-0228.GM15
+
+    Adding Layer      : Mechanical 15
+
+    Adding Layer      : Mechanical 15
+
+    Adding Layer      : Mechanical 13
+
+    Adding Layer      : Mechanical 1
+
+
+Used DCodes :
+    D42
+    D44
+    D45
+    D46
+    D47
+    D48
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 13
+      File : 7798-20-0228.GM13
+
+    Adding Layer      : Mechanical 13
+
+    Adding Layer      : Mechanical 15
+
+    Adding Layer      : Mechanical 13
+
+    Adding Layer      : Mechanical 1
+
+
+Used DCodes :
+    D42
+    D44
+    D45
+    D46
+    D47
+    D48
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 1
+      File : 7798-20-0228.GM1
+
+    Adding Layer      : Mechanical 1
+
+    Adding Layer      : Mechanical 15
+
+    Adding Layer      : Mechanical 13
+
+    Adding Layer      : Mechanical 1
+
+
+Used DCodes :
+    D42
+    D44
+    D45
+    D46
+    D47
+    D48
+*************************************************************
+
