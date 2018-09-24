@@ -1,5 +1,5 @@
 ------------------------------------------------------------------------------------------
-Gerber File Extension Report For: 7798-20-0228.GBR   9/24/2018  9:42:05 AM
+Gerber File Extension Report For: 7798-20-0228.GBR   9/24/2018  3:00:29 PM
 ------------------------------------------------------------------------------------------
 
 
@@ -7,13 +7,13 @@ Gerber File Extension Report For: 7798-20-0228.GBR   9/24/2018  9:42:05 AM
 Layer Extension     Layer Description                      
 ------------------------------------------------------------------------------------------
 .GTL                Top Signal                              
-.GP1                Ground Plane (GND)                      
-.G1                 Inner Layer 1                           
-.G2                 Inner Layer 2                           
+.GPB                Bottom Pad Master                       
 .GP2                Power Plane (VCC)                       
 .GBL                Bottom Signal                           
-.GPB                Bottom Pad Master                       
 .GPT                Top Pad Master                          
+.GP1                Ground Plane (GND)                      
+.G2                 Inner Layer 2                           
+.G1                 Inner Layer 1                           
 .GTO                Top Overlay                             
 .GTP                Top Paste                               
 .GTS                Top Solder                              
