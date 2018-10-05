@@ -1,6 +1,11 @@
 FIX
 - LEDs currently being driven by 1.8 V, needs transistor and higher driving voltage
 - Add two pull up resistors on FXAS21002C interrupt pins
+- Add X,Y, and Z indicators for accelometer
+  and gyroscope on PCB top layer
+
+1.0.2
+- Tagged final work on 1.x.x version before moving on to 2.x.x
 
 1.0.1
 - Replaced R1,R2,R3,R4 560 ohm resistors with 33 ohm resistors

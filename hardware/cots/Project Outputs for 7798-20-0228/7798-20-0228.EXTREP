@@ -1,26 +1,27 @@
 ------------------------------------------------------------------------------------------
-Gerber File Extension Report For: 7798-20-0228.GBR   5/2/2018  4:58:27 PM
+Gerber File Extension Report For: 7798-20-0228.GBR   9/24/2018  3:00:29 PM
 ------------------------------------------------------------------------------------------
 
 
 ------------------------------------------------------------------------------------------
 Layer Extension     Layer Description                      
 ------------------------------------------------------------------------------------------
-.GTL                Top Layer                               
-.GP1                PWR                                     
-.GP2                GND                                     
-.GBL                Bottom Layer                            
+.GTL                Top Signal                              
 .GPB                Bottom Pad Master                       
+.GP2                Power Plane (VCC)                       
+.GBL                Bottom Signal                           
 .GPT                Top Pad Master                          
+.GP1                Ground Plane (GND)                      
+.G2                 Inner Layer 2                           
+.G1                 Inner Layer 1                           
 .GTO                Top Overlay                             
 .GTP                Top Paste                               
 .GTS                Top Solder                              
 .GBS                Bottom Solder                           
 .GBP                Bottom Paste                            
 .GBO                Bottom Overlay                          
-.GM1                Mechanical 1                            
-.GM2                Mechanical 2                            
-.GM13               Mechanical 13                           
+.GKO                Keep-Out Layer                          
 .GM15               Mechanical 15                           
-.GM25               Mechanical 25                           
+.GM13               Mechanical 13                           
+.GM1                Mechanical 1                            
 ------------------------------------------------------------------------------------------

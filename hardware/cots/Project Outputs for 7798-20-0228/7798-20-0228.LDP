@@ -1,2 +1,3 @@
-Layer Pairs Export File for PCB: C:\Users\jonathan.graham\GIT\visor\hardware\cots\7798-20-0228.PcbDoc
-LayersSetName=Top_Bot_Thru_Holes|DrillFile=7798-20-0228.txt|DrillLayers=gtl,gp1,gp2,gbl
+Layer Pairs Export File for PCB: C:\Users\brandon.dixon\Git\visor\hardware\cots\7798-20-0228.PcbDoc
+LayersSetName=Top_Bot_Thru_Holes|DrillFile=7798-20-0228-roundholes.txt|DrillLayers=gtl,gp1,g1,g2,gp2,gbl
+LayersSetName=Top_Bot_Slot_Holes|DrillFile=7798-20-0228-slotholes.txt|DrillLayers=gtl,gp1,g1,g2,gp2,gbl

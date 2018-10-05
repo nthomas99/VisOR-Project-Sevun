@@ -2,21 +2,30 @@
 FileName = 7798-20-0228.GBR
 AutoAperture = True
 *************************************************************
-Generating : Top Layer
-      File : 7798-20-0228.GTL
+Generating : Bottom Overlay
+      File : 7798-20-0228.GBO
 
-    Adding Layer      : Top Layer
+    Adding Layer      : Bottom Overlay
+
+
+Used DCodes :
+    D12
+    D13
+    D14
+    D88
+    D120
+*************************************************************
+
+*************************************************************
+Generating : Top Pad Master
+      File : 7798-20-0228.GPT
+
+    Adding Layer      : Top Signal
 
     Adding Layer      : Multi-Layer
 
 
 Used DCodes :
-    D10
-    D11
-    D12
-    D13
-    D14
-    D15
     D16
     D17
     D18
@@ -35,18 +44,6 @@ Used DCodes :
     D31
     D32
     D33
-*************************************************************
-
-*************************************************************
-Generating : PWR
-      File : 7798-20-0228.GP1
-
-    Adding Layer      : PWR
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
     D34
     D35
     D36
@@ -58,87 +55,29 @@ Used DCodes :
     D42
     D43
     D44
-*************************************************************
-
-*************************************************************
-Generating : GND
-      File : 7798-20-0228.GP2
-
-    Adding Layer      : GND
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D34
-    D36
-    D37
-    D38
-    D39
-    D40
-    D41
-    D42
-    D43
-    D44
-*************************************************************
-
-*************************************************************
-Generating : Bottom Layer
-      File : 7798-20-0228.GBL
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D25
-    D26
-    D27
-    D28
-    D29
-    D30
-    D31
-    D32
-    D33
     D45
+    D87
+    D90
+    D91
+    D92
+    D93
+    D94
+    D95
+    D96
 *************************************************************
 
 *************************************************************
-Generating : Bottom Pad Master
-      File : 7798-20-0228.GPB
+Generating : Top Paste
+      File : 7798-20-0228.GTP
 
-    Adding Layer      : Bottom Layer
+    Adding Layer      : Top Paste
+
+    Adding Layer      : Top Signal
 
     Adding Layer      : Multi-Layer
 
 
 Used DCodes :
-    D26
-    D27
-    D28
-    D29
-    D30
-    D31
-    D32
-    D45
-*************************************************************
-
-*************************************************************
-Generating : Top Pad Master
-      File : 7798-20-0228.GPT
-
-    Adding Layer      : Top Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D10
-    D11
-    D12
-    D13
-    D14
     D15
     D16
     D17
@@ -149,6 +88,7 @@ Used DCodes :
     D22
     D23
     D24
+    D25
     D26
     D27
     D28
@@ -156,6 +96,122 @@ Used DCodes :
     D30
     D31
     D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+    D39
+    D40
+    D41
+    D42
+    D43
+    D44
+    D45
+*************************************************************
+
+*************************************************************
+Generating : Bottom Pad Master
+      File : 7798-20-0228.GPB
+
+    Adding Layer      : Bottom Signal
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D26
+    D28
+    D29
+    D35
+    D90
+    D91
+    D92
+    D93
+    D94
+    D95
+    D96
+    D117
+*************************************************************
+
+*************************************************************
+Generating : Bottom Paste
+      File : 7798-20-0228.GBP
+
+    Adding Layer      : Bottom Paste
+
+    Adding Layer      : Bottom Signal
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D26
+    D28
+    D29
+    D35
+    D117
+*************************************************************
+
+*************************************************************
+Generating : Bottom Signal
+      File : 7798-20-0228.GBL
+
+    Adding Layer      : Bottom Signal
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D12
+    D26
+    D28
+    D29
+    D35
+    D88
+    D89
+    D90
+    D91
+    D92
+    D93
+    D94
+    D95
+    D96
+    D97
+    D98
+    D99
+    D117
+    D118
+*************************************************************
+
+*************************************************************
+Generating : Bottom Solder
+      File : 7798-20-0228.GBS
+
+    Adding Layer      : Bottom Solder
+
+    Adding Layer      : Bottom Signal
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D56
+    D59
+    D60
+    D66
+    D77
+    D78
+    D79
+    D80
+    D81
+    D82
+    D83
+    D84
+    D85
+    D86
+    D119
 *************************************************************
 
 *************************************************************
@@ -166,32 +222,111 @@ Generating : Top Overlay
 
 
 Used DCodes :
-    D35
-    D46
-    D47
-    D48
-    D49
-    D50
-*************************************************************
-
-*************************************************************
-Generating : Top Paste
-      File : 7798-20-0228.GTP
-
-    Adding Layer      : Top Paste
-
-    Adding Layer      : Top Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
     D10
     D11
     D12
     D13
     D14
-    D15
+*************************************************************
+
+*************************************************************
+Generating : Power Plane (VCC)
+      File : 7798-20-0228.GP2
+
+    Adding Layer      : Power Plane (VCC)
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D13
+    D100
+    D101
+    D102
+    D105
+    D106
+    D107
+    D108
+    D109
+    D110
+    D111
+    D113
+    D114
+    D115
+    D116
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 15
+      File : 7798-20-0228.GM15
+
+    Adding Layer      : Mechanical 15
+
+
+Used DCodes :
+    D11
+    D12
+    D13
+    D121
+*************************************************************
+
+*************************************************************
+Generating : Inner Layer 2
+      File : 7798-20-0228.G2
+
+    Adding Layer      : Inner Layer 2
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D12
+    D89
+    D90
+    D91
+    D92
+    D93
+    D94
+    D97
+    D98
+    D99
+*************************************************************
+
+*************************************************************
+Generating : Keep-Out Layer
+      File : 7798-20-0228.GKO
+
+    Adding Layer      : Keep-Out Layer
+
+
+Used DCodes :
+    D13
+*************************************************************
+
+*************************************************************
+Generating : Mechanical 1
+      File : 7798-20-0228.GM1
+
+    Adding Layer      : Mechanical 1
+
+
+Used DCodes :
+    D13
+    D14
+    D122
+*************************************************************
+
+*************************************************************
+Generating : Top Signal
+      File : 7798-20-0228.GTL
+
+    Adding Layer      : Top Signal
+
+    Adding Layer      : Multi-Layer
+
+
+Used DCodes :
+    D12
     D16
     D17
     D18
@@ -201,6 +336,40 @@ Used DCodes :
     D22
     D23
     D24
+    D25
+    D26
+    D27
+    D28
+    D29
+    D30
+    D31
+    D32
+    D33
+    D34
+    D35
+    D36
+    D37
+    D38
+    D39
+    D40
+    D41
+    D42
+    D43
+    D44
+    D45
+    D87
+    D88
+    D89
+    D90
+    D91
+    D92
+    D93
+    D94
+    D95
+    D96
+    D97
+    D98
+    D99
 *************************************************************
 
 *************************************************************
@@ -209,12 +378,17 @@ Generating : Top Solder
 
     Adding Layer      : Top Solder
 
-    Adding Layer      : Top Layer
+    Adding Layer      : Top Signal
 
     Adding Layer      : Multi-Layer
 
 
 Used DCodes :
+    D46
+    D47
+    D48
+    D49
+    D50
     D51
     D52
     D53
@@ -238,81 +412,46 @@ Used DCodes :
     D71
     D72
     D73
-*************************************************************
-
-*************************************************************
-Generating : Bottom Solder
-      File : 7798-20-0228.GBS
-
-    Adding Layer      : Bottom Solder
-
-    Adding Layer      : Bottom Layer
-
-    Adding Layer      : Multi-Layer
-
-
-Used DCodes :
-    D66
-    D67
-    D68
-    D69
-    D70
-    D71
-    D72
-    D73
     D74
+    D75
+    D76
+    D77
+    D78
+    D79
+    D80
+    D81
+    D82
+    D83
+    D84
+    D85
+    D86
 *************************************************************
 
 *************************************************************
-Generating : Bottom Paste
-      File : 7798-20-0228.GBP
+Generating : Ground Plane (GND)
+      File : 7798-20-0228.GP1
 
-    Adding Layer      : Bottom Paste
-
-    Adding Layer      : Bottom Layer
+    Adding Layer      : Ground Plane (GND)
 
     Adding Layer      : Multi-Layer
 
 
 Used DCodes :
-    D45
-*************************************************************
-
-*************************************************************
-Generating : Bottom Overlay
-      File : 7798-20-0228.GBO
-
-    Adding Layer      : Bottom Overlay
-
-
-Used DCodes :
-    D35
-    D49
-    D50
-    D75
-*************************************************************
-
-*************************************************************
-Generating : Mechanical 1
-      File : 7798-20-0228.GM1
-
-    Adding Layer      : Mechanical 1
-
-
-Used DCodes :
-    D35
-*************************************************************
-
-*************************************************************
-Generating : Mechanical 2
-      File : 7798-20-0228.GM2
-
-    Adding Layer      : Mechanical 2
-
-
-Used DCodes :
-    D25
-    D35
+    D100
+    D101
+    D102
+    D103
+    D104
+    D105
+    D106
+    D107
+    D108
+    D109
+    D110
+    D111
+    D112
+    D113
+    D114
 *************************************************************
 
 *************************************************************
@@ -323,31 +462,29 @@ Generating : Mechanical 13
 
 
 Used DCodes :
-    D46
+    D11
 *************************************************************
 
 *************************************************************
-Generating : Mechanical 15
-      File : 7798-20-0228.GM15
+Generating : Inner Layer 1
+      File : 7798-20-0228.G1
 
-    Adding Layer      : Mechanical 15
+    Adding Layer      : Inner Layer 1
+
+    Adding Layer      : Multi-Layer
 
 
 Used DCodes :
-    D35
-    D46
-    D48
-    D76
-*************************************************************
-
-*************************************************************
-Generating : Mechanical 25
-      File : 7798-20-0228.GM25
-
-    Adding Layer      : Mechanical 25
-
-
-Used DCodes :
-    D35
+    D12
+    D88
+    D89
+    D90
+    D91
+    D92
+    D93
+    D94
+    D97
+    D98
+    D99
 *************************************************************
 
